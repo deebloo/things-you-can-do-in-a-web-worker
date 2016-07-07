@@ -1,6 +1,8 @@
 # things-you-can-do-in-a-web-worker
 A list of available functionality and use cases for web workers. Have something to add? Submit a PR
 
+## APIS
+
 ### Web Notifications
 https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API
 
