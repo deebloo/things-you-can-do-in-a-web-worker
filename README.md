@@ -19,7 +19,12 @@ Lets you make a network request.
 ### Fetch
 https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
 
-The Fetch API is a modern replacement for XMLHttpRequest and is closer to a lot of the libraries we are used to.\
+The Fetch API is a modern replacement for XMLHttpRequest and is closer to a lot of the libraries we are used to.
+
+### Web Sockets
+https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API
+
+"WebSockets is an advanced technology that makes it possible to open an interactive communication session between the user's browser and a server. With this API, you can send messages to a server and receive event-driven responses without having to poll the server for a reply."
 
 ## USE CASES
 
