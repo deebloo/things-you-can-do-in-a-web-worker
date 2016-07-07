@@ -2,7 +2,8 @@
 
 (List just started, Will grow soon)
 
-A list of available functionality and use cases for web workers. Have something to add? Submit a PR
+A list of available functionality and use cases for web workers. Have something to add? Submit a PR.
+There is also a good list available [here](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Functions_and_classes_available_to_workers)
 
 ## APIS
 
