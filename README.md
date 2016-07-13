@@ -70,11 +70,9 @@ Keep your source data safe and away from your UI thread and avoid unintended sid
 
 ```JS
 var storeWorker = createWorker(function (e) {
-  var state = {};
-  
   switch(e.data.type) {
     'save':
-      state = e.data.value;
+      self.state = e.data.value;
       self.postMessage(state);
       break;
     
