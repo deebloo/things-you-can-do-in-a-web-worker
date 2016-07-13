@@ -83,10 +83,12 @@ var storeWorker = createWorker(function (e) {
   }
 });
 
+// listen for updates to your state
 worker.addEventListener('message', function (e) {
   console.log(e.data);
 });
 
+// save new data
 worker.postMessage({
   type: 'save',
   value:{ ...new stuff }
