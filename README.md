@@ -8,6 +8,12 @@ There is also a good list available [here](https://developer.mozilla.org/en-US/d
 
 ## APIS
 
+### FileReader
+https://developer.mozilla.org/en-US/docs/Web/API/FileReader
+
+The file reader api allows you to read uploaded files.
+You can now upload a file (say csv). send that to a web worker, read the file and parse it to json.
+
 ### Web Notifications
 https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API
 
