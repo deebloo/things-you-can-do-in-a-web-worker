@@ -63,32 +63,3 @@ var hugeData = [ ... ];
 
 worker.postMessage(hugeData);
 ```
-
-### Data Store
-
-Keep your source data safe and away from your UI thread and avoid unintended side effects.
-
-```JS
-var storeWorker = createWorker(function (e) {
-  switch(e.data.type) {
-    'save':
-      self.state = e.data.value;
-      self.postMessage(state);
-      break;
-    
-    default:
-      self.postMessage(state);
-  }
-});
-
-// listen for updates to your state
-worker.addEventListener('message', function (e) {
-  console.log(e.data);
-});
-
-// save new data
-worker.postMessage({
-  type: 'save',
-  value:{ ...new stuff }
-});
-```
