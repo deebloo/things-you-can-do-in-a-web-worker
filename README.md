@@ -67,7 +67,7 @@ var filterWorker = createWorker(function (e) {
 
 var hugeData = [ ... ];
 
-worker.postMessage(hugeData);
+filterWorker.postMessage(hugeData);
 ```
 
 ### Polling
