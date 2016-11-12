@@ -69,3 +69,34 @@ var hugeData = [ ... ];
 
 worker.postMessage(hugeData);
 ```
+
+### Polling
+Yes yes yes polling is gross, but sometimes it can be necessary, offload the grossness to a new thread.
+
+```JS
+var pollingWorker = createWorker(function (e) {
+  var cache;
+  
+  function compare(new, old) { ... };
+  
+  var myRequest = new Request('/my-api-endpoint');
+  
+  setInterval(function () {
+    fetch('/my-api-endpoint').then(function (res) {
+      var data = res.json();
+      
+      if(!compare(res.json(), cache)) {
+        cache = data;
+        
+        self.postMessage(data);
+      }
+    })
+  }, 1000)
+});
+
+pollingWorker.onmessage = function () {
+  // render data
+}
+
+pollingWorker.postMessage('init');
+```
