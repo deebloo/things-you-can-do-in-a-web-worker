@@ -84,7 +84,7 @@ var pollingWorker = createWorker(function (e) {
   var myRequest = new Request('/my-api-endpoint');
   
   setInterval(function () {
-    fetch('/my-api-endpoint').then(function (res) {
+    fetch(myRequest).then(function (res) {
       var data = res.json();
       
       if(!compare(res.json(), cache)) {
