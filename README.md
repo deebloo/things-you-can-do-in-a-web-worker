@@ -79,7 +79,7 @@ Yes yes yes polling is gross, but sometimes it can be necessary, offload the gro
 var pollingWorker = createWorker(function (e) {
   var cache;
   
-  function compare(new, old) { ... };
+  function compare(newData, oldData) { ... };
   
   var myRequest = new Request('/my-api-endpoint');
   
