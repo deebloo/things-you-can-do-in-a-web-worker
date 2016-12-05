@@ -87,7 +87,7 @@ var pollingWorker = createWorker(function (e) {
     fetch(myRequest).then(function (res) {
       var data = res.json();
       
-      if(!compare(res.json(), cache)) {
+      if(!compare(data, cache)) {
         cache = data;
         
         self.postMessage(data);
