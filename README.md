@@ -36,11 +36,6 @@ https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API
 
 "WebSockets is an advanced technology that makes it possible to open an interactive communication session between the user's browser and a server. With this API, you can send messages to a server and receive event-driven responses without having to poll the server for a reply."
 
-### Promises
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
-
-"The Promise object is used for asynchronous computations. A Promise represents an operation that hasn't completed yet, but is expected in the future."
-
 ## USE CASES
 
 #### All use cases will use inline workers using the following function
