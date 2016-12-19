@@ -69,6 +69,7 @@ filterWorker.postMessage(hugeData);
 
 ### Polling
 Yes yes yes polling is gross, but sometimes it can be necessary, offload the grossness to a new thread.
+NOTE: web workers will hold their state but NOT permenantly, so don't keep anything in them that you can't get some other way.
 
 ```JS
 var pollingWorker = createWorker(function (e) {
