@@ -5,8 +5,9 @@ tldr; A list of available functionality and use cases for web workers. Have some
 (List just started, Will grow soon)
 Web Workers give web developers the apility to run code in multiple threads. This is great, now, what can we do with these threads? This document is meant to help provide context and real world use cases for these little wonders.
 
-
-There is also a good list available [here](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Functions_and_classes_available_to_workers)
+## Sweet Links
+https://github.com/mchaov/WebWorkers
+https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Functions_and_classes_available_to_workers
 
 ## APIS
 
