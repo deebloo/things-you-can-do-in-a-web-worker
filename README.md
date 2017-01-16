@@ -38,29 +38,25 @@ https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API
 
 ## USE CASES
 
-#### All use cases will use inline workers using the following function
-
-for more info https://medium.com/@dee_bloo/make-multithreading-easier-with-inline-web-workers-a58723428a42#.4m4uweub3
-```JS
-function createWorker(fn) {
-  var blob = new Blob(['self.onmessage = ', fn], { type: 'text/javascript' });
-  var url = URL.createObjectUrl(blob);
-  
-  return new Worker(url);
-}
-
-```
-
 ### Filtering
 
 Filter large data sets without blocking the UI thread and without making a full round trip to the server.
 
 ```JS
-var filterWorker = createWorker(function (e) {
+// filter-worker.js
+self.onmessage = function () {
   self.postMessage(e.data.filter(function () {
     return e.flagged;
   }));
-});
+}
+
+// app.js
+var filterWorker = new Worker('filter-worker.js');
+
+filterWorker.onmessage = function (e) {
+  // Log filtered list
+  console.log(e.data);
+}
 
 var hugeData = [ ... ];
 
@@ -72,7 +68,8 @@ Yes yes yes polling is gross, but sometimes it can be necessary, offload the gro
 NOTE: web workers will hold their state but NOT permenantly, so don't keep anything in them that you can't get some other way.
 
 ```JS
-var pollingWorker = createWorker(function (e) {
+// polling-worker.js
+self.onmessage = function (e) {
   var cache;
   
   function compare(newData, oldData) { ... };
@@ -91,6 +88,9 @@ var pollingWorker = createWorker(function (e) {
     })
   }, 1000)
 });
+
+// app.js
+var pollingWorker = new Worker('polling-worker.js');
 
 pollingWorker.onmessage = function () {
   // render data
