@@ -17,6 +17,10 @@ https://developer.mozilla.org/en-US/docs/Web/API/FileReader
 The file reader api allows you to read uploaded files.
 You can now upload a file (say csv). send that to a web worker, read the file and parse it to json.
 
+### IndexedDB
+https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB
+"IndexedDB is a way for you to persistently store data inside a user's browser. Because it lets you create web applications with rich query abilities regardless of network availability, your applications can work both online and offline."
+
 ### Web Notifications
 https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API
 
