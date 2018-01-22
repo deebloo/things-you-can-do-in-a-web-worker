@@ -15,7 +15,7 @@ Web Workers give web developers the apility to run code in multiple threads. Thi
 https://developer.mozilla.org/en-US/docs/Web/API/FileReader
 
 The file reader api allows you to read uploaded files.
-You can now upload a file (say csv). send that to a web worker, read the file and parse it to json.
+You can now upload a file (say csv). send that to a web worker, read the file and parse it to json without blocking the main UI thread.
 
 ### IndexedDB
 https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB
