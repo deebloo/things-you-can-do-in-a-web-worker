@@ -69,6 +69,57 @@ var hugeData = [ ... ];
 filterWorker.postMessage(hugeData);
 ```
 
+### Proxy for other Js library APIs
+
+You can use web workers to load and run Javascript libraries in separate threads so that none of the downloading or parsing is handled on the main thread
+
+```JS
+// cool-worker.js
+loadScripts('https://large/but/cool/library.js');
+
+self.onmessage = function (e) {
+  switch(e.data.type) {
+    case: 'thingIWantToDo':
+      myLibraryScope.doTheThing(e.data.payload).then(res => {
+        self.postMessage({
+          status: 'COMPLETED'
+          type: e.data.type,
+          payload: res
+        })
+      });
+      
+      break;
+      
+    default:
+      throw new Error(`Action ${e.data.type} is not handled by cool-worker`);
+  }
+}
+
+// app.js
+var coolWorker = new Worker('cool-worker.js');
+
+dispatch({
+  type: 'thingIWantToDo',
+  payload: 1000
+}).then(console.log);
+
+function dispatch(action) {
+  return new Promise(resolve => {
+    const listener = res => {
+      if (res.data.type === action.type && res.data.status === 'COMPLETED') {
+        resolve(res.data.payload);
+      }
+      
+      coolWorker.removeEventListener('message', listener);
+    };
+    
+    coolWorker.addEventListener('message', listener);
+    
+    coolWorker.postMessage(action);
+  });
+}
+```
+
 ### Polling
 Yes yes yes polling is gross, but sometimes it can be necessary, offload the grossness to a new thread.
 NOTE: web workers will hold their state but NOT permenantly, so don't keep anything in them that you can't get some other way.
