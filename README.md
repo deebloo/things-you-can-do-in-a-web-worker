@@ -108,9 +108,9 @@ function dispatch(action) {
     const listener = res => {
       if (res.data.type === action.type && res.data.status === 'COMPLETED') {
         resolve(res.data.payload);
+        
+        coolWorker.removeEventListener('message', listener);
       }
-      
-      coolWorker.removeEventListener('message', listener);
     };
     
     coolWorker.addEventListener('message', listener);
