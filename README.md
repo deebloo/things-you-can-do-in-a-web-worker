@@ -134,9 +134,7 @@ self.onmessage = function (e) {
   var myRequest = new Request('/my-api-endpoint');
   
   setInterval(function () {
-    fetch(myRequest).then(function (res) {
-      var data = res.json();
-      
+    fetch(myRequest).then(res => res.json()).then(function (data) {
       if(!compare(data, cache)) {
         cache = data;
         
