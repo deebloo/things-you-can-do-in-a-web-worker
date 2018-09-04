@@ -127,27 +127,29 @@ NOTE: web workers will hold their state but NOT permenantly, so don't keep anyth
 ```JS
 // polling-worker.js
 self.onmessage = function (e) {
-  var cache;
+  let cache;
   
-  function compare(newData, oldData) { ... };
+  const compare = (newData, oldData) => { ... };
   
   var myRequest = new Request('/my-api-endpoint');
   
-  setInterval(function () {
-    fetch(myRequest).then(res => res.json()).then(function (data) {
-      if(!compare(data, cache)) {
-        cache = data;
+  setInterval(() => {
+    fetch(myRequest)
+      .then(res => res.json())
+      .then(data => {
+        if(!compare(data, cache)) {
+          cache = data;
         
-        self.postMessage(data);
-      }
-    })
+          self.postMessage(data);
+        }
+      })
   }, 1000)
 });
 
 // app.js
 var pollingWorker = new Worker('polling-worker.js');
 
-pollingWorker.onmessage = function () {
+pollingWorker.onmessage = () => {
   // render data
 }
 
