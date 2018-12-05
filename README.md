@@ -50,7 +50,7 @@ Filter large data sets without blocking the UI thread and without making a full 
 
 ```JS
 // filter-worker.js
-self.onmessage = function () {
+self.onmessage = function (e) {
   self.postMessage(e.data.filter(function () {
     return e.flagged;
   }));
