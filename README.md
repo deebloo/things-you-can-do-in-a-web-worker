@@ -1,4 +1,4 @@
-# things-you-can-do-in-a-web-worker
+# Things You Can Do In A Web Worker
 
 tldr; A list of available functionality and use cases for web workers. Have something to add? Submit a PR.
 
