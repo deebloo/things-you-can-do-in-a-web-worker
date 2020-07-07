@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script type="module">
+      const filterWorker = new Worker("./filter.worker.js");
+
+      filterWorker.addEventListener("message", (e) => {
+        console.log(e.data);
+      });
+
+      // Create a bunch of data
+      const bigList = new Array(20000)
+        .fill(null)
+        .map((_, i) => ({ flagged: i % 2 == 0 ? true : false }));
+
+      // Post data to worker
+      filterWorker.postMessage(bigList);
+    </script>
+  </body>
+</html>
