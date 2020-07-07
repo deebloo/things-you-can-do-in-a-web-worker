@@ -81,6 +81,8 @@ filterWorker.postMessage(hugeData);
 
 ### Proxy for other Js library APIs
 
+[example](examples/proxy)
+
 You can use web workers to load and run Javascript libraries in separate threads so that none of the downloading or parsing is handled on the main thread
 
 ```JS

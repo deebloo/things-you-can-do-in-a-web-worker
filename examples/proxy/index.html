@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
 
-<body>
+  <body>
     <div id="test"></div>
 
-    <script>
-        const worker = new Worker('./proxy.worker.js');
-        const test = document.getElementById('test');
+    <script type="module">
+      const worker = new Worker("./proxy.worker.js");
+      const test = document.getElementById("test");
 
-        worker.onmessage = res => {
-            test.innerHTML = res.data;
-        }
+      worker.onmessage = (res) => {
+        test.innerHTML = res.data;
+      };
 
-        worker.postMessage({
-            type: 'FORMAT',
-            data: new Date().toString()
-        })
+      worker.postMessage({
+        type: "FORMAT",
+        data: new Date().toString(),
+      });
     </script>
-</body>
+  </body>
 </html>
