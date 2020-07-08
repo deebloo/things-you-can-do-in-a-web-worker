@@ -7,6 +7,7 @@ Web Workers give web developers the apility to run code in multiple threads. Thi
 
 ## Tooling
 - [Rollup](examples/rollup)
+- [Webpack](examples/webpack)
 
 ## Sweet Links
 
