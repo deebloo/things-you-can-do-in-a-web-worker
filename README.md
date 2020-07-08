@@ -11,40 +11,28 @@ Web Workers give web developers the apility to run code in multiple threads. Thi
 
 ## Available APIS
 
-### FileReader
-
-https://developer.mozilla.org/en-US/docs/Web/API/FileReader
+### [FileReader](https://developer.mozilla.org/en-US/docs/Web/API/FileReader)
 
 The file reader api allows you to read uploaded files.
 You can now upload a file (say csv). send that to a web worker, read the file and parse it to json without blocking the main UI thread.
 
-### IndexedDB
-
-https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB
+### [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
 
 "IndexedDB is a way for you to persistently store data inside a user's browser. Because it lets you create web applications with rich query abilities regardless of network availability, your applications can work both online and offline."
 
-### Web Notifications
-
-https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API
+### [Web Notifications](https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
 
 Web Notifications allow you to send pop up style notifications to users even when they do not have your site open.
 
-### XMLHttpRequest
-
-https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
+### [XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
 
 Lets you make a network request.
 
-### Fetch
-
-https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+### [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
 
 The Fetch API is a modern replacement for XMLHttpRequest and is closer to a lot of the libraries we are used to.
 
-### Web Sockets
-
-https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API
+### [Web Sockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API)
 
 "WebSockets is an advanced technology that makes it possible to open an interactive communication session between the user's browser and a server. With this API, you can send messages to a server and receive event-driven responses without having to poll the server for a reply."
 
