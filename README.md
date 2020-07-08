@@ -9,11 +9,6 @@ Web Workers give web developers the apility to run code in multiple threads. Thi
 - [Rollup](examples/rollup)
 - [Webpack](examples/webpack)
 
-## Sweet Links
-
-- https://github.com/mchaov/WebWorkers
-- https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Functions_and_classes_available_to_workers
-
 ## Available APIS
 
 ### FileReader
@@ -172,3 +167,8 @@ pollingWorker.onmessage = () => {
 
 pollingWorker.postMessage('init');
 ```
+
+## Sweet Links
+
+- https://github.com/mchaov/WebWorkers
+- https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Functions_and_classes_available_to_workers
