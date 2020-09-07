@@ -162,3 +162,4 @@ pollingWorker.postMessage('init');
 
 - https://github.com/mchaov/WebWorkers
 - https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Functions_and_classes_available_to_workers
+- [Query database in a web worker](https://github.com/genderev/assassin)
