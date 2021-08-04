@@ -40,6 +40,12 @@ The Fetch API is a modern replacement for XMLHttpRequest and is closer to a lot 
 
 ## USE CASES
 
+### Web Assembly (WASM)
+
+Web assembly is fully capable of being run inside of a web worker! This means we can do some more computationaly heavy tasks taking advantage of wasm but avoiding blocking our main UI thread. For an example take a look at this simple machine learning Tic Tac Toe bot written in Rust and running in wasm.
+
+https://github.com/code-jugglers/brain-games-rust
+
 ### Filtering
 
 [example](examples/filtering)
